@@ -5,7 +5,7 @@ import secret_keys  # 外部ファイルにAPI keyを保存
 
 # openai.api_key = secret_keys.openai_api_key
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
-openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+os.environ["OPENAI_API_KEY"] = st.secrets.OpenAIAPI.openai_api_key
 
 system_prompt = """
 あなたは優秀な料理研究家です。
